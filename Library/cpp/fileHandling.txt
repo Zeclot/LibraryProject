@@ -1,0 +1,43 @@
+To perform file processing in C++ there are two includes that are needed to start
+the work with the files. These are,
+
+#include <iostream>
+#include <fstream>
+
+After the includes the first thing is to start opening the file to work with it.
+This is done by the following command.
+
+void open(const char *filename, ios::openmode mode);
+
+First argument states the name of the file and the second argument what kind of
+mode the system is opened in. Here there are some different modes.
+
+ios::app - append mode
+ios::ate - open file for read and write at end of file
+ios::in  - open file for reading
+ios::out - open file for writing
+ios::trunc - if file already exist, truncate content before opening
+
+An example of the use is as follows.
+
+fstream file;
+file.open("filename.xxx",ios::xxx);
+file.close();
+
+It is good practice to always close the file once it is used.
+
+To read a full text file one needs to loop through the content of the file.
+This is done as follows.
+
+while(file.eof()==0){
+  file >> string;
+  if(file.eof())
+    break;
+  cout << string << " ";
+}
+
+
+Another method of achieving this is to use the std::getline(filename,string) command.
+It will read line by line from the file. So that the correct new lines are placed.
+Multiple methods exist for the task, and I think the the usage depends a bit on what
+you want to read from the file.

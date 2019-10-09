@@ -1,0 +1,12 @@
+To use strings one needs to first include the string packaged.
+This is done by the command.
+
+#include <string>
+
+Once this is done one can easily create a string by using the cast system.
+
+string my_string;
+
+! One thing with strings is that they do not work in switch conditions. This
+is because the switch statement only works for integers in c++. See further information
+about the switch statement in the switch file. 
